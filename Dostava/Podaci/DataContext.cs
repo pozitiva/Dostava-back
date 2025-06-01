@@ -13,12 +13,52 @@ namespace DostavaHrane.Data
         }
 
         public DbSet<Adresa> Adrese { get; set; }
+        public DbSet<Dostavljac> Dostavljaci { get; set; }
+        public DbSet<Jelo> Jela { get; set; }
+        public DbSet<Korisnik> Korisnici { get; set; }
         public DbSet<Musterija> Musterije { get; set; }
         public DbSet<Narudzbina> Narudzbine { get; set; }
         public DbSet<Restoran> Restorani { get; set; }
+        public DbSet<StavkaNarudzbine> StavkeNarudzbina { get; set; }
+       
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-    
+            modelBuilder.Entity<Korisnik>()
+                .ToTable("Korisnici");
+
+            modelBuilder.Entity<Musterija>()
+                .ToTable("Musterije")
+                .HasBaseType<Korisnik>();
+
+            modelBuilder.Entity<Restoran>()
+                .ToTable("Restorani")
+                .HasBaseType<Korisnik>();
+
+            modelBuilder.Entity<Jelo>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Naziv).HasMaxLength(100).IsRequired();
+                entity.Property(e => e.Cena).HasColumnType("decimal(18,2)");
+                entity.Property(e => e.TipJela).HasMaxLength(50).IsRequired();
+
+                entity.HasMany(e => e.StavkeNarudzbine)
+                    .WithOne(e => e.Jelo)
+                    .HasForeignKey(e => e.JeloId);
+
+                entity.HasOne(s => s.Restoran)
+                .WithMany(u => u.Jela)
+                .HasForeignKey(s => s.RestoranId)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<StavkaNarudzbine>(entity =>
+            {
+                entity.HasKey(sn => new { sn.JeloId, sn.NarudzbinaId });
+
+            });
 
             modelBuilder.Entity<Narudzbina>(entity =>
             {
