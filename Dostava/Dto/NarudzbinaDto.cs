@@ -1,0 +1,30 @@
+﻿using DostavaHrane.Dto;
+using System.Text.Json.Serialization;
+
+namespace Dostava.Dto
+{
+    public class NarudzbinaDto
+    {
+        public int Id { get; set; }
+
+        public int? RestoranId { get; set; }
+
+        public string? RestoranIme { get; set; }
+        public DateTime DatumNarudzbine { get; set; }
+        public string? Status { get; set; }
+
+        public decimal? UkupnaCena { get; set; }
+        public int? DostavljacId { get; set; }
+
+        public int? AdresaId { get; set; }
+        public int? MusterijaId { get; set; }
+
+        public string? Adresa { get; set; }
+        public string? MusterijaIme { get; set; }
+        public string? DostavljacIme { get; set; }
+
+        public ICollection<StavkaNarudzbineDto> StavkeNarudzbine { get; set; }
+
+
+    }
+}

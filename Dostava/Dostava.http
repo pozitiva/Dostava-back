@@ -1,0 +1,6 @@
+@Dostava_HostAddress = http://localhost:5209
+
+GET {{Dostava_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
