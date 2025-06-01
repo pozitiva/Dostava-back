@@ -1,8 +1,8 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace DostavaHrane.Entiteti
+namespace Dostava.Entiteti
 {
-    public class Jelo
+     public class Jelo
     {
         public int Id { get; set; }
         public string Naziv {  get; set; }

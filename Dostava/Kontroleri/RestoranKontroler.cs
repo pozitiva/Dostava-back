@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
 using Dostava.Dto;
 using Dostava.Servisi.Interfejsi;
-using DostavaHrane.Dto;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DostavaHrane.Kontroleri
+namespace Dostava.Kontroleri
 {
     [Authorize]
     [Route("api/restoran")]

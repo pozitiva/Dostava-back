@@ -1,7 +1,4 @@
-﻿using DostavaHrane.Dto;
-using System.Text.Json.Serialization;
-
-namespace Dostava.Dto
+﻿namespace Dostava.Dto
 {
     public class NarudzbinaDto
     {

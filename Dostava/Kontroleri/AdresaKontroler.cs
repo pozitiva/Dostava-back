@@ -1,13 +1,12 @@
 ﻿using AutoMapper;
+using Dostava.Dto;
+using Dostava.Entiteti;
 using Dostava.Servisi.Interfejsi;
-using DostavaHrane.Dto;
-using DostavaHrane.Entiteti;
-
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
-namespace DostavaHrane.Kontroleri
+namespace Dostava.Kontroleri
 {
     [Authorize]
     [Route("api/adresa")]

@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
 using Dostava.Dto;
-using DostavaHrane.Dto;
-using DostavaHrane.Entiteti;
+using Dostava.Entiteti;
 
-namespace DostavaHrane.Helper
+namespace Dostava.Helper
 {
     public class MappingProfiles:Profile
     {

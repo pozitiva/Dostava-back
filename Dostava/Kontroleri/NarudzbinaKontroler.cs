@@ -4,7 +4,7 @@ using Dostava.Servisi.Interfejsi;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DostavaHrane.Kontroleri
+namespace Dostava.Kontroleri
 {
     [Authorize]
     [Route("api/narudzbina")]

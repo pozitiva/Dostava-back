@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
+using Dostava.Entiteti;
 using Dostava.Repozitorijumi.Interfejsi;
 using Dostava.Servisi.Interfejsi;
-using DostavaHrane.Entiteti;
 using System.Security.Cryptography;
 
 namespace Dostava.Servisi

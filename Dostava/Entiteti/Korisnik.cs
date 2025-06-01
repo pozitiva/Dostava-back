@@ -1,5 +1,4 @@
-﻿namespace DostavaHrane.Entiteti
-
+﻿namespace Dostava.Entiteti
 {
     public class Korisnik
     {

@@ -1,7 +1,9 @@
+using Dostava.Helper;
 using Dostava.Podaci;
 using Dostava.Repozitorijumi.Interfejsi;
-using DostavaHrane.Data;
-using DostavaHrane.Helper;
+using Dostava.Servisi.Interfejsi;
+using Dostava.Servisi;
+using Dostava.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +15,9 @@ builder.Services.AddControllers();
 builder.Services.AddAutoMapper(typeof(MappingProfiles));
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-
+builder.Services.AddScoped<IAdresaServis, AdresaServis>();
+builder.Services.AddScoped<IRestoranServis, RestoranServis>();
+builder.Services.AddScoped<INarudzbinaServis, NarudzbinaServis>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -37,6 +41,7 @@ builder.Services.AddCors(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddControllers();
 
 var app = builder.Build();
 

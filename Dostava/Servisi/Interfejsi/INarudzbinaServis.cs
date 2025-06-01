@@ -1,5 +1,5 @@
 ﻿using Dostava.Dto;
-using DostavaHrane.Entiteti;
+using Dostava.Entiteti;
 
 namespace Dostava.Servisi.Interfejsi 
 { 

@@ -1,7 +1,7 @@
-﻿using DostavaHrane.Entiteti;
+﻿using Dostava.Entiteti;
 using Microsoft.EntityFrameworkCore;
 
-namespace DostavaHrane.Data
+namespace Dostava.Data
 {
     public class DataContext : DbContext
     {
@@ -21,8 +21,6 @@ namespace DostavaHrane.Data
         public DbSet<Restoran> Restorani { get; set; }
         public DbSet<StavkaNarudzbine> StavkeNarudzbina { get; set; }
        
-
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Korisnik>()

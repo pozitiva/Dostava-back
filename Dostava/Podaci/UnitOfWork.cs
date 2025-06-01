@@ -1,6 +1,6 @@
 ﻿using Dostava.Repozitorijumi.Interfejsi;
 using Dostava.Repozitorijumi;
-using DostavaHrane.Data;
+using Dostava.Data;
 
 namespace Dostava.Podaci
 {
@@ -27,6 +27,7 @@ namespace Dostava.Podaci
         public INarudzbinaRepozitorijum NarudzbinaRepozitorijum => _narudzbinaRepozitorijum.Value;
 
         public IRestoranRepozitorijum RestoranRepozitorijum => _restoranRepozitorijum.Value;
+
         public async Task SaveChanges() => await _context.SaveChangesAsync();
 
 

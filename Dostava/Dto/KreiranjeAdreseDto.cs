@@ -1,4 +1,4 @@
-﻿namespace DostavaHrane.Dto
+﻿namespace Dostava.Dto
 {
     public class KreiranjeAdreseDto
     {

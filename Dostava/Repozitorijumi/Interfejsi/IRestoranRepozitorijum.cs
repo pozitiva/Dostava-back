@@ -1,4 +1,4 @@
-﻿using DostavaHrane.Entiteti;
+﻿using Dostava.Entiteti;
 
 namespace Dostava.Repozitorijumi.Interfejsi
 {

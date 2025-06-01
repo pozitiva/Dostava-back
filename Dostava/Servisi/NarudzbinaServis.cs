@@ -1,8 +1,7 @@
 ﻿using Dostava.Repozitorijumi.Interfejsi;
 using Dostava.Servisi.Interfejsi;
-using DostavaHrane.Entiteti;
-using Dostava.Repozitorijumi;
 using Dostava.Dto;
+using Dostava.Entiteti;
 
 namespace Dostava.Servisi
 {

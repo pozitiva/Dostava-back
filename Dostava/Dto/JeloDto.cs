@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DostavaHrane.Dto
+namespace Dostava.Dto
 {
     public class JeloDto
     {

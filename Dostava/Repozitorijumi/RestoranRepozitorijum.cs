@@ -1,6 +1,6 @@
-﻿using Dostava.Repozitorijumi.Interfejsi;
-using DostavaHrane.Data;
-using DostavaHrane.Entiteti;
+﻿using Dostava.Data;
+using Dostava.Entiteti;
+using Dostava.Repozitorijumi.Interfejsi;
 using Microsoft.EntityFrameworkCore;
 
 namespace Dostava.Repozitorijumi

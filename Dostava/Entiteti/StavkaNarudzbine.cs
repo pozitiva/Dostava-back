@@ -1,6 +1,7 @@
-﻿using System.Text.Json.Serialization;
+﻿using Dostava.Entiteti;
+using System.Text.Json.Serialization;
 
-namespace DostavaHrane.Entiteti
+namespace Dostava.Entiteti
 
 {
     public class StavkaNarudzbine

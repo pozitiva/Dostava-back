@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using DostavaHrane.Dto;
 
 namespace Dostava.Dto
 {
