@@ -1,9 +1,9 @@
-﻿using DostavaHrane.Data;
+﻿using Dostava.Repozitorijumi.Interfejsi;
+using DostavaHrane.Data;
 using DostavaHrane.Entiteti;
-using DostavaHrane.Interfejsi;
 using Microsoft.EntityFrameworkCore;
 
-namespace DostavaHrane.Repozitorijum
+namespace Dostava.Repozitorijumi
 {
     public class MusterijaRepozitorijum : IMusterijaRepozitorijum
     {

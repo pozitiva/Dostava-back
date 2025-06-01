@@ -1,4 +1,4 @@
-﻿namespace DostavaHrane.Interfejsi
+﻿namespace Dostava.Repozitorijumi.Interfejsi
 {
     public interface IRepozitorijum<T> where T : class
     {

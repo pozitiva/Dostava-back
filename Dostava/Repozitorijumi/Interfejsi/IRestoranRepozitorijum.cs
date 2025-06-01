@@ -1,6 +1,6 @@
 ﻿using DostavaHrane.Entiteti;
 
-namespace DostavaHrane.Interfejsi
+namespace Dostava.Repozitorijumi.Interfejsi
 {
     public interface IRestoranRepozitorijum : IRepozitorijum<Restoran>
     {

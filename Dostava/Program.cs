@@ -1,7 +1,7 @@
+using Dostava.Podaci;
+using Dostava.Repozitorijumi.Interfejsi;
 using DostavaHrane.Data;
 using DostavaHrane.Helper;
-using DostavaHrane.InfrastrukturniSloj.Podaci;
-using DostavaHrane.Interfejsi;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
