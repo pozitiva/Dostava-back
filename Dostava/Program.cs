@@ -18,6 +18,7 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IAdresaServis, AdresaServis>();
 builder.Services.AddScoped<IRestoranServis, RestoranServis>();
 builder.Services.AddScoped<INarudzbinaServis, NarudzbinaServis>();
+builder.Services.AddScoped<IDostavljacServis, DostavljacServis>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

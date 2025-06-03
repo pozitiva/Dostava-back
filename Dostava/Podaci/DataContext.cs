@@ -20,7 +20,9 @@ namespace Dostava.Data
         public DbSet<Narudzbina> Narudzbine { get; set; }
         public DbSet<Restoran> Restorani { get; set; }
         public DbSet<StavkaNarudzbine> StavkeNarudzbina { get; set; }
-       
+
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Korisnik>()
@@ -90,7 +92,7 @@ namespace Dostava.Data
                     .HasForeignKey(e => e.NarudzbinaId);
             });
 
-            modelBuilder.Entity <Adresa>(entity =>
+            modelBuilder.Entity<Adresa>(entity =>
             {
                 entity.HasOne(s => s.Musterija)
                     .WithMany(u => u.Adrese)
@@ -103,6 +105,7 @@ namespace Dostava.Data
         }
 
     }
+
 
 
 

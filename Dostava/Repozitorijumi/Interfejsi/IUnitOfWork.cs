@@ -6,6 +6,8 @@
         IMusterijaRepozitorijum MusterijaRepozitorijum { get; }
         IRestoranRepozitorijum RestoranRepozitorijum { get; }
         INarudzbinaRepozitorijum NarudzbinaRepozitorijum { get; }
+
+        IDostavljacRepozitorijum DostavljacRepozitorijum { get; }
         Task SaveChanges();
 
     }

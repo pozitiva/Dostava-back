@@ -11,6 +11,7 @@ namespace Dostava.Podaci
         private readonly Lazy<IMusterijaRepozitorijum> _musterijaRepozitorijum;
         private readonly Lazy<INarudzbinaRepozitorijum> _narudzbinaRepozitorijum;
         private readonly Lazy<IRestoranRepozitorijum> _restoranRepozitorijum;
+        private readonly Lazy<IDostavljacRepozitorijum> _dostavljacRepozitorijum;
 
         public UnitOfWork(DataContext context)
         {
@@ -19,6 +20,7 @@ namespace Dostava.Podaci
             _musterijaRepozitorijum = new Lazy<IMusterijaRepozitorijum>(() => new MusterijaRepozitorijum(_context));
             _narudzbinaRepozitorijum = new Lazy<INarudzbinaRepozitorijum>(() => new NarudzbinaRepozitorijum(_context));
             _restoranRepozitorijum = new Lazy<IRestoranRepozitorijum>(() => new RestoranRepozitorijum(_context));
+            _dostavljacRepozitorijum = new Lazy<IDostavljacRepozitorijum>(() => new DostavljacRepozitorijum(_context));
         }
         public IAdresaRepozitorijum AdresaRepozitorijum => _adresaRepozitorijum.Value;
 
@@ -27,6 +29,8 @@ namespace Dostava.Podaci
         public INarudzbinaRepozitorijum NarudzbinaRepozitorijum => _narudzbinaRepozitorijum.Value;
 
         public IRestoranRepozitorijum RestoranRepozitorijum => _restoranRepozitorijum.Value;
+
+        public IDostavljacRepozitorijum DostavljacRepozitorijum => _dostavljacRepozitorijum.Value;
 
         public async Task SaveChanges() => await _context.SaveChangesAsync();
 
