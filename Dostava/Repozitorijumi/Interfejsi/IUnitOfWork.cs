@@ -3,11 +3,12 @@
     public interface IUnitOfWork
     {
         IAdresaRepozitorijum AdresaRepozitorijum { get; }
-        IMusterijaRepozitorijum MusterijaRepozitorijum { get; }
-        IRestoranRepozitorijum RestoranRepozitorijum { get; }
-        INarudzbinaRepozitorijum NarudzbinaRepozitorijum { get; }
-
         IDostavljacRepozitorijum DostavljacRepozitorijum { get; }
+        IJeloRepozitorijum JeloRepozitorijum { get; }
+        IMusterijaRepozitorijum MusterijaRepozitorijum { get; }
+        INarudzbinaRepozitorijum NarudzbinaRepozitorijum { get; }
+        IRestoranRepozitorijum RestoranRepozitorijum { get; }
+        IAdminRepozitorijum AdminRepozitorijum { get; }
         Task SaveChanges();
 
     }

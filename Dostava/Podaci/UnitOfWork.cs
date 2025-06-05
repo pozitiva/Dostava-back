@@ -8,21 +8,29 @@ namespace Dostava.Podaci
     {
         private readonly DataContext _context;
         private readonly Lazy<IAdresaRepozitorijum> _adresaRepozitorijum;
+        private readonly Lazy<IDostavljacRepozitorijum> _dostavljacRepozitorijum;
+        private readonly Lazy<IJeloRepozitorijum> _jeloRepozitorijum;
         private readonly Lazy<IMusterijaRepozitorijum> _musterijaRepozitorijum;
         private readonly Lazy<INarudzbinaRepozitorijum> _narudzbinaRepozitorijum;
         private readonly Lazy<IRestoranRepozitorijum> _restoranRepozitorijum;
-        private readonly Lazy<IDostavljacRepozitorijum> _dostavljacRepozitorijum;
+        private readonly Lazy<IAdminRepozitorijum> _adminRepozitorijum;
 
         public UnitOfWork(DataContext context)
         {
             _context = context;
             _adresaRepozitorijum = new Lazy<IAdresaRepozitorijum>(() => new AdresaRepozitorijum(_context));
+            _dostavljacRepozitorijum = new Lazy<IDostavljacRepozitorijum>(() => new DostavljacRepozitorijum(_context));
+            _jeloRepozitorijum = new Lazy<IJeloRepozitorijum>(() => new JeloRepozitorijum(_context));
             _musterijaRepozitorijum = new Lazy<IMusterijaRepozitorijum>(() => new MusterijaRepozitorijum(_context));
             _narudzbinaRepozitorijum = new Lazy<INarudzbinaRepozitorijum>(() => new NarudzbinaRepozitorijum(_context));
             _restoranRepozitorijum = new Lazy<IRestoranRepozitorijum>(() => new RestoranRepozitorijum(_context));
-            _dostavljacRepozitorijum = new Lazy<IDostavljacRepozitorijum>(() => new DostavljacRepozitorijum(_context));
+            _adminRepozitorijum = new Lazy<IAdminRepozitorijum>(() => new AdminRepozitorijum(_context));
         }
         public IAdresaRepozitorijum AdresaRepozitorijum => _adresaRepozitorijum.Value;
+
+        public IDostavljacRepozitorijum DostavljacRepozitorijum => _dostavljacRepozitorijum.Value;
+
+        public IJeloRepozitorijum JeloRepozitorijum => _jeloRepozitorijum.Value;
 
         public IMusterijaRepozitorijum MusterijaRepozitorijum => _musterijaRepozitorijum.Value;
 
@@ -30,10 +38,9 @@ namespace Dostava.Podaci
 
         public IRestoranRepozitorijum RestoranRepozitorijum => _restoranRepozitorijum.Value;
 
-        public IDostavljacRepozitorijum DostavljacRepozitorijum => _dostavljacRepozitorijum.Value;
+        public IAdminRepozitorijum AdminRepozitorijum => _adminRepozitorijum.Value;
 
         public async Task SaveChanges() => await _context.SaveChangesAsync();
-
 
     }
 }
