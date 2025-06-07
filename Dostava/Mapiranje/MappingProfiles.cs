@@ -17,7 +17,7 @@ namespace Dostava.Helper
             .ForMember(dest => dest.JeloIme, opt => opt.MapFrom(src => src.Jelo.Naziv));
 
             CreateMap<Narudzbina, NarudzbinaDto>()
-           .ForMember(dest => dest.Adresa, opt => opt.MapFrom(src => src.Adresa.Ulica))  
+           .ForMember(dest => dest.Adresa, opt => opt.MapFrom(src => src.Adresa.Ulica))
            .ForMember(dest => dest.MusterijaIme, opt => opt.MapFrom(src => src.Musterija.Ime))
            .ForMember(dest => dest.DostavljacIme, opt => opt.MapFrom(src => src.Dostavljac.Ime))
            .ForMember(dest => dest.RestoranIme, opt => opt.MapFrom(src => src.Restoran.Ime))
@@ -26,13 +26,32 @@ namespace Dostava.Helper
 
             CreateMap<NarudzbinaDto, Narudzbina>();
 
+            CreateMap<KorisnikLoginDto, Korisnik>();
+
+            CreateMap<KorisnikLoginDto, Musterija>()
+            .IncludeBase<KorisnikLoginDto, Korisnik>();
+
+            CreateMap<KorisnikLoginDto, Restoran>()
+            .IncludeBase<KorisnikLoginDto, Korisnik>();
+
+
+            CreateMap<MusterijaIzmenaDto, Musterija>();
+
             //CreateMap<StavkaNarudzbineDto, StavkaNarudzbine>();
 
             CreateMap<Adresa, AdresaDto>();
             CreateMap<AdresaDto, Adresa>();
 
-            CreateMap<Musterija, MusterijaDto>();   
+            CreateMap<Adresa, KreiranjeAdreseDto>();
+            CreateMap<KreiranjeAdreseDto, Adresa>();
+
+            CreateMap<Musterija, MusterijaDto>();
             CreateMap<MusterijaDto, Musterija>();
+
+            CreateMap<Dostavljac, DostavljacDto>();
+            CreateMap<DostavljacDto, Dostavljac>();
+
+
         }
     }
 }
