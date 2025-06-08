@@ -4,10 +4,11 @@ using Dostava.Podaci;
 using Dostava.Repozitorijumi.Interfejsi;
 using Dostava.Servisi.Interfejsi;
 using Dostava.Servisi;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
@@ -17,13 +18,14 @@ builder.Services.AddControllers();
 //builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddAutoMapper(typeof(MappingProfiles));
 
-
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddScoped<IAdresaServis, AdresaServis>();
+builder.Services.AddScoped<IMusterijaServis, MusterijaServis>();
 builder.Services.AddScoped<IJeloServis, JeloServis>();
 builder.Services.AddScoped<IRestoranServis, RestoranServis>();
 builder.Services.AddScoped<INarudzbinaServis, NarudzbinaServis>();
+builder.Services.AddScoped<IAuthServis, AuthServis>();
 builder.Services.AddScoped<IDostavljacServis, DostavljacServis>();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -76,6 +78,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
     app.UseDeveloperExceptionPage();
 }
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "..", "Dostava", "Podaci", "static")),
+    RequestPath = "/static"
+});
 
 app.UseCors("AllowAll");
 
