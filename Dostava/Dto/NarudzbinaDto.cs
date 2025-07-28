@@ -1,11 +1,13 @@
-﻿namespace Dostava.Dto
+﻿using System.Text.Json.Serialization;
+
+namespace DostavaHrane.Dto
 {
     public class NarudzbinaDto
     {
         public int Id { get; set; }
-
+      
         public int? RestoranId { get; set; }
-
+        
         public string? RestoranIme { get; set; }
         public DateTime DatumNarudzbine { get; set; }
         public string? Status { get; set; }
@@ -22,6 +24,6 @@
 
         public ICollection<StavkaNarudzbineDto> StavkeNarudzbine { get; set; }
 
-
+        public DateTime? VremeDogadjaja { get; set; }
     }
-}
+    }
